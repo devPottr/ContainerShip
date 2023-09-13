@@ -5,22 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ee6b72ee-d26e-4d68-890d-13793114869c" name="Changes" comment="refactored">
-      <change afterPath="$PROJECT_DIR$/src/main/java/LoadingManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Container.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Container.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ContainerTerminal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ContainerTerminal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GreedyBalancingLoadingPlanGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GreedyBalancingLoadingPlanGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GreedySimplePlanGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GreedySimplePlanGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/LoadingPlanGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LoadingPlanGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MyStackArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MyStackArray.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Pair.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pair.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Section.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Section.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ShipLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ShipLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/StorageArea.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/StorageArea.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ContainerTerminalTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ContainerTerminalTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,8 +158,17 @@
       <option name="presentableId" value="Default" />
       <updated>1694538524234</updated>
       <workItem from="1694538525342" duration="2663000" />
-      <workItem from="1694587837452" duration="7029000" />
+      <workItem from="1694587837452" duration="8051000" />
     </task>
+    <task id="LOCAL-00001" summary="refactored">
+      <option name="closed" value="true" />
+      <created>1694608317453</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1694608317453</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -1,34 +1,51 @@
+import java.util.Arrays;
 import java.util.List;
 
 public class Application {
     public static void main(String[] args) {
-        // Create a ContainerShip with 20 sections, 4 storage areas per section, and a maximum stack size of 35
-        ContainerShip ship = new ContainerShip(20, 4, 35);
+        // Create two ContainerShips and two ContainerTerminals
+        ContainerShip ship1 = new ContainerShip(20, 4, 35);
+        ContainerShip ship2 = new ContainerShip(20, 4, 35);
+        ContainerTerminal terminal1 = new ContainerTerminal(75, 90);
+        ContainerTerminal terminal2 = new ContainerTerminal(75, 90);
 
-        // Create a ContainerTerminal with 75 rows and 90 columns
-        ContainerTerminal terminal = new ContainerTerminal(75, 90);
+        // place 4000 random containers in both terminals
+        terminal1.placeRandomContainers(4000);
+        terminal2.placeRandomContainers(4000);
 
-        // Place 4000 random containers in the terminal
-        terminal.placeRandomContainers(4000);
+        // Get all containers from both terminals
+        List<Container> containerList1 = terminal1.getAllContainers();
+        List<Container> containerList2 = terminal2.getAllContainers();
 
-        // Retrieve all containers from the terminal
-        List<Container> containerList = terminal.getAllContainers();
+        // Create a list of LoadingPlanGenerators
+        List<LoadingPlanGenerator> planGenerators = Arrays.asList(
+                new GreedyBalancingLoadingPlanGenerator(),
+                new GreedySimplePlanGenerator()
+        );
 
-        // Create an instance of GreedyBalancingLoadingPlanGenerator
-        LoadingPlanGenerator planGenerator = new GreedyBalancingLoadingPlanGenerator();
-        //LoadingPlanGenerator planGenerator = new GreedySimplePlanGenerator();
+        // Create a list of ships and terminals
+        List<ContainerShip> ships = Arrays.asList(ship1, ship2);
+        List<ContainerTerminal> terminals = Arrays.asList(terminal1, terminal2);
+        List<List<Container>> containerLists = Arrays.asList(containerList1, containerList2);
 
-        // Generate the loading plan and save it to a CSV file
-        String csvFilePath = "loading_plan.csv";
-        planGenerator.generatePlan(ship, containerList, csvFilePath);
+        // Walk through the list and run each algorithm
+        for (int i = 0; i < planGenerators.size(); i++) {
+            LoadingPlanGenerator planGenerator = planGenerators.get(i);
+            System.out.println("Aktiver Algorithmus: " + planGenerator.getClass().getSimpleName());
+            System.out.println("=====================================");
+            ContainerShip ship = ships.get(i);
+            ContainerTerminal terminal = terminals.get(i);
+            List<Container> containerList = containerLists.get(i);
 
-        // Create an instance of ShipLoader
-        ShipLoader loader = new ShipLoader();
+            String csvFilePath = "loading_plan_" + planGenerator.getClass().getSimpleName() + ".csv";
+            planGenerator.generatePlan(ship, containerList, csvFilePath);
 
-        // Load the ship based on the generated CSV file
-        loader.loadShipFromCSV(ship, terminal, csvFilePath);
+            ShipLoader loader = new ShipLoader();
+            loader.loadShipFromCSV(ship, terminal, csvFilePath);
 
-        // Optional: Display the load distribution again to see the changes
-        ship.printLoadDistribution();
+            ship.printLoadDistribution();
+            System.out.println("=====================================");
+        }
     }
+
 }
