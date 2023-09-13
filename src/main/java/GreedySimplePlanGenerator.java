@@ -1,10 +1,7 @@
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.PrintWriter;
 import java.util.*;
 
 public class GreedySimplePlanGenerator implements LoadingPlanGenerator {
-    private static final int MAX_ITERATIONS = 10_000_000;
+    private final LoadingManager loadingManager = new LoadingManager();
 
     @Override
     public void generatePlan(ContainerShip ship, List<Container> containers, String csvFilePath) {
@@ -17,9 +14,6 @@ public class GreedySimplePlanGenerator implements LoadingPlanGenerator {
         // Sort containers by weight
         containers.sort(Comparator.comparing(Container::getWeight).reversed());
 
-        // Initialization
-        int iterations = 0;
-
         // Create a map to hold the loading plan
         Map<UUID, UUID> loadingPlan = new HashMap<>();
 
@@ -29,8 +23,8 @@ public class GreedySimplePlanGenerator implements LoadingPlanGenerator {
 
         // We don't care about the order of the containers in the different sections and storage areas
         // We only care if they are in left or right sections
-        List<Container> leftContainers = new ArrayList<Container>();
-        List<Container> rightContainers = new ArrayList<Container>();
+        List<Container> leftContainers = new ArrayList<>();
+        List<Container> rightContainers = new ArrayList<>();
 
         // Go through each container and check which side (either left or right) weighs less.
         // Then add the container to this side
@@ -42,7 +36,6 @@ public class GreedySimplePlanGenerator implements LoadingPlanGenerator {
                 rightContainers.add(container);
                 rightTotal += container.getWeight();
             }
-            iterations++;
         }
 
         // TODO: the complexity for sorting the container beforehand is ???
@@ -91,14 +84,8 @@ public class GreedySimplePlanGenerator implements LoadingPlanGenerator {
             }
         }
 
+        loadingManager.writePlanToCSV(loadingPlan, csvFilePath);
         // After balancing, create CSV file
-        try (PrintWriter writer = new PrintWriter(new File(csvFilePath))) {
-            writer.write("ContainerUUID,StackUUID\n");
-            for (Map.Entry<UUID, UUID> entry : loadingPlan.entrySet()) {
-                writer.write(entry.getKey().toString() + "," + entry.getValue().toString() + "\n");
-            }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
+
     }
 }

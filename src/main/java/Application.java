@@ -15,15 +15,12 @@ public class Application {
         List<Container> containerList = terminal.getAllContainers();
 
         // Create an instance of GreedyBalancingLoadingPlanGenerator
-        //LoadingPlanGenerator planGenerator = new GreedyBalancingLoadingPlanGenerator();
-        LoadingPlanGenerator planGenerator = new GreedySimplePlanGenerator();
+        LoadingPlanGenerator planGenerator = new GreedyBalancingLoadingPlanGenerator();
+        //LoadingPlanGenerator planGenerator = new GreedySimplePlanGenerator();
 
         // Generate the loading plan and save it to a CSV file
         String csvFilePath = "loading_plan.csv";
         planGenerator.generatePlan(ship, containerList, csvFilePath);
-
-        // Optional: Display the load distribution (if such a method exists in the ContainerShip class)
-        // ship.printLoadDistribution();
 
         // Create an instance of ShipLoader
         ShipLoader loader = new ShipLoader();

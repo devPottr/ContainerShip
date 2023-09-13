@@ -2,18 +2,39 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.UUID;
 
+/**
+ * Represents a container terminal with a grid layout.
+ * Provides methods for adding, removing, and retrieving containers.
+ */
 public class ContainerTerminal {
+    // Random number generator for generating container attributes
     private static final MersenneTwisterFast RANDOM = new MersenneTwisterFast();
+
+    // 2D grid to represent the terminal layout
     private final Container[][] grid;
+
+    // Number of rows and columns in the terminal
     private final int rows;
     private final int cols;
 
+    /**
+     * Initializes a new container terminal with the given dimensions.
+     * @param rows Number of rows in the terminal.
+     * @param cols Number of columns in the terminal.
+     */
     public ContainerTerminal(int rows, int cols) {
         this.rows = rows;
         this.cols = cols;
         this.grid = new Container[rows][cols];
     }
 
+    /**
+     * Adds a container to a specific location in the terminal.
+     * @param row Row index.
+     * @param col Column index.
+     * @param container The container to add.
+     * @return true if the container was added, false otherwise.
+     */
     public boolean addContainer(int row, int col, Container container) {
         if (grid[row][col] == null) {
             grid[row][col] = container;
@@ -22,6 +43,12 @@ public class ContainerTerminal {
         return false;
     }
 
+    /**
+     * Removes and returns a container from a specific location.
+     * @param row Row index.
+     * @param col Column index.
+     * @return The removed container, or null if the location was empty.
+     */
     public Container removeContainer(int row, int col) {
         Container container = grid[row][col];
         grid[row][col] = null;
@@ -29,7 +56,7 @@ public class ContainerTerminal {
     }
 
     /**
-     * Retrives all containers in the terminal.
+     * Retrieves all containers in the terminal.
      * @return List of all containers in the terminal.
      */
     public List<Container> getAllContainers() {
@@ -43,7 +70,6 @@ public class ContainerTerminal {
         }
         return containers;
     }
-
 
     /**
      * Places a specific number of random containers in the terminal.
@@ -61,7 +87,6 @@ public class ContainerTerminal {
             }
         }
     }
-
 
     /**
      * Generates a random container with random attributes.
@@ -98,10 +123,9 @@ public class ContainerTerminal {
         return  12500 + (20000 * RANDOM.nextDouble());
     }
 
-
     /**
      * Removes a container from the terminal by its ID.
-     * @param containerId
+     * @param containerId The UUID of the container to remove.
      * @return The removed container, or null if no container was found.
      */
     public Container removeContainerById(UUID containerId) {

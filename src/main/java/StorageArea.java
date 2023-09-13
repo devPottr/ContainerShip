@@ -1,14 +1,12 @@
-import java.util.UUID;
 import java.util.Optional;
+import java.util.UUID;
 
 /**
- * Represents a storage area in the container terminal.
+ * Represents a storage area in a container terminal.
  */
 public class StorageArea implements Cloneable {
-    // Stack to hold the containers
+    // Stack to hold the containers in this storage area
     private MyStackArray<Container> stack;
-
-
 
     // Maximum number of containers this storage area can hold
     private final int maxStackSize;
@@ -85,13 +83,20 @@ public class StorageArea implements Cloneable {
     }
 
     /**
-     * Gets the maxstack size of this storage area.
-     * @return The maxstack size.
+     * Gets the maximum stack size of this storage area.
+     *
+     * @return The maximum stack size.
      */
     public int getMaxStackSize() {
         return maxStackSize;
     }
 
+    /**
+     * Creates a deep clone of this StorageArea object.
+     *
+     * @return A deep clone of this StorageArea.
+     * @throws AssertionError if cloning is not supported.
+     */
     public StorageArea clone() {
         try {
             StorageArea clone = (StorageArea) super.clone();
@@ -101,7 +106,4 @@ public class StorageArea implements Cloneable {
             throw new AssertionError();
         }
     }
-
-
-
 }
