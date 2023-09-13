@@ -4,22 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ee6b72ee-d26e-4d68-890d-13793114869c" name="Changes" comment="refactored">
-      <change afterPath="$PROJECT_DIR$/src/main/java/RandomNumberGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="ee6b72ee-d26e-4d68-890d-13793114869c" name="Changes" comment="Cleanup">
+      <change afterPath="$PROJECT_DIR$/src/test/java/BalanceAlgorithmTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ContainerShip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ContainerShip.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ContainerTerminal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ContainerTerminal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GreedyBalancingLoadingPlanGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GreedyBalancingLoadingPlanGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GreedySimplePlanGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GreedySimplePlanGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MersenneTwisterFast.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MersenneTwisterFast.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MyStackArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MyStackArray.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Pair.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pair.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Section.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Section.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ShippingCompany.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ShippingCompany.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/StorageArea.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/StorageArea.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ContainerShipTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ContainerShipTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ContainerTerminalTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ContainerTerminalTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,8 +40,8 @@
       <list>
         <option value="Enum" />
         <option value="JUnit5 Test Class" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -70,26 +57,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -98,13 +86,37 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Application">
+  <component name="RunManager" selected="Gradle.BalanceAlgorithmTest">
     <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Application" />
       <module name="ContainerShip.main" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
+    </configuration>
+    <configuration name="BalanceAlgorithmTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;BalanceAlgorithmTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
     </configuration>
     <configuration name="ContainerShipTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -154,8 +166,34 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
+    <configuration name="GreedyAlgorithmTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;GreedyAlgorithmTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.BalanceAlgorithmTest" />
+        <item itemvalue="Gradle.GreedyAlgorithmTest" />
         <item itemvalue="Gradle.ContainerTerminalTest" />
         <item itemvalue="Gradle.ContainerShipTest" />
         <item itemvalue="Application.Application" />
@@ -172,7 +210,7 @@
       <updated>1694538524234</updated>
       <workItem from="1694538525342" duration="2663000" />
       <workItem from="1694587837452" duration="8051000" />
-      <workItem from="1694626958090" duration="2932000" />
+      <workItem from="1694626958090" duration="3976000" />
     </task>
     <task id="LOCAL-00001" summary="refactored">
       <option name="closed" value="true" />
@@ -182,7 +220,15 @@
       <option name="project" value="LOCAL" />
       <updated>1694608317453</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Cleanup">
+      <option name="closed" value="true" />
+      <created>1694629948784</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1694629948784</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -190,6 +236,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="refactored" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactored" />
+    <MESSAGE value="Cleanup" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cleanup" />
   </component>
 </project>
