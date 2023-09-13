@@ -20,29 +20,25 @@ public class GreedySimplePlanGenerator implements LoadingPlanGenerator {
      */
     @Override
     public void generatePlan(ContainerShip ship, List<Container> containers, String csvFilePath) {
-        // Clone the ship
+        // Kopiere das Schiff mit einem Deep-Clone
         ContainerShip shipTemplate = ship.clone();
 
-        // Initialize a map to simulate the weight distribution of StorageAreas
-        // Map<UUID, Double> simulatedWeights = new HashMap<>();
-
-        // Sort containers by weight
+        // Sortiere die Container nach dem Gewicht (abwaerts)
         containers.sort(Comparator.comparing(Container::getWeight).reversed());
 
-        // Create a map to hold the loading plan
+        // Erstelle eine Map für den Ladeplan
         Map<UUID, UUID> loadingPlan = new HashMap<>();
 
-        // For simplicity use a local variable to track the total weight on the left and right
+        // Benutze lokale Variablen um das totale Gewicht von den linken und rechten Sektionen zu verfolgen
         double leftTotal = 0;
         double rightTotal = 0;
 
-        // We don't care about the order of the containers in the different sections and storage areas
-        // We only care if they are in left or right sections
+        // Uns ist die Reihenfolge der Container in den Sektionen oder Lagerbereichen egal
+        // Uns ist nur wichtig, ob sie in den linken oder rechten Sektionen sind
         List<Container> leftContainers = new ArrayList<>();
         List<Container> rightContainers = new ArrayList<>();
 
-        // Go through each container and check which side (either left or right) weighs less.
-        // Then add the container to this side
+        // Iteriere durch jeden Container und überprüfe welche Seite des Schiffes weniger wiegt
         for (Container container : containers) {
             if (leftTotal < rightTotal) {
                 leftContainers.add(container);
@@ -52,14 +48,6 @@ public class GreedySimplePlanGenerator implements LoadingPlanGenerator {
                 rightTotal += container.getWeight();
             }
         }
-
-        // TODO: the complexity for sorting the container beforehand is ???
-        // NOTE: the complexity for the algorithm is O(n)
-        // TODO: find out total complexity
-
-        // TODO: is it possible that the capacity of one side is used up for 4000 containers and max. 2800 per side?
-
-        // TODO: use a function for the DRY-Principle
 
         Iterator<Container> leftIterator = leftContainers.iterator();
 
@@ -100,7 +88,6 @@ public class GreedySimplePlanGenerator implements LoadingPlanGenerator {
         }
 
         loadingManager.writePlanToCSV(loadingPlan, csvFilePath);
-        // After balancing, create CSV file
-
     }
+
 }

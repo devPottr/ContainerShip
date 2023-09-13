@@ -4,19 +4,29 @@ import java.util.UUID;
  * Represents a shipping container with various attributes.
  */
 public class Container {
-    // Unique identifier for the container
+    /**
+     * Unique identifier for the container
+     */
     private final UUID id;
 
-    // Weight of the container
+    /**
+     * Weight of the container
+     */
     private final double weight;
 
-    // Indicates whether the container is heavy
+    /**
+     * Indicates whether the container is heavy
+     */
     private final boolean isHeavy;
 
-    // The shipping company responsible for this container
+    /**
+     * The shipping company responsible for this container
+     */
     private final ShippingCompany shippingCompany;
 
-    // UUID of the StorageArea where this container is placed
+    /**
+     * UUID of the StorageArea where this container is placed
+     */
     private UUID storageAreaUUID;
 
     /**
@@ -27,10 +37,10 @@ public class Container {
      * @param shippingCompany The shipping company responsible for this container.
      */
     public Container(double weight, boolean isHeavy, ShippingCompany shippingCompany) {
-        // Generate a random UUID for the container
+        // Erstelle eine zufällige UUID für den Container
         this.id = UUID.randomUUID();
 
-        // Initialize weight, heaviness status, and shipping company
+        // Initialisiere die restlichen Klassenvariablen anhand der Parameter
         this.weight = weight;
         this.isHeavy = isHeavy;
         this.shippingCompany = shippingCompany;

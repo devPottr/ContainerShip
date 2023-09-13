@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ee6b72ee-d26e-4d68-890d-13793114869c" name="Changes" comment="Cleanup">
-      <change afterPath="$PROJECT_DIR$/src/test/java/BalanceAlgorithmTest.java" afterDir="false" />
+    <list default="true" id="ee6b72ee-d26e-4d68-890d-13793114869c" name="Changes" comment="Add new tests for the balance">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Container.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Container.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GreedyBalancingLoadingPlanGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GreedyBalancingLoadingPlanGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GreedySimplePlanGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GreedySimplePlanGenerator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +51,20 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Akk4r1n"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="5c378682-57d5-4a13-be77-ba133c0041dc" />
+        <option name="url" value="https://github.com/devPottr/ContainerShip.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
 }</component>
@@ -86,7 +103,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.BalanceAlgorithmTest">
+  <component name="RunManager" selected="Application.Application">
     <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Application" />
       <module name="ContainerShip.main" />
@@ -210,7 +227,7 @@
       <updated>1694538524234</updated>
       <workItem from="1694538525342" duration="2663000" />
       <workItem from="1694587837452" duration="8051000" />
-      <workItem from="1694626958090" duration="3976000" />
+      <workItem from="1694626958090" duration="5199000" />
     </task>
     <task id="LOCAL-00001" summary="refactored">
       <option name="closed" value="true" />
@@ -228,7 +245,15 @@
       <option name="project" value="LOCAL" />
       <updated>1694629948784</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Add new tests for the balance">
+      <option name="closed" value="true" />
+      <created>1694630990938</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1694630990938</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -237,6 +262,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="refactored" />
     <MESSAGE value="Cleanup" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cleanup" />
+    <MESSAGE value="Add new tests for the balance" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add new tests for the balance" />
   </component>
 </project>

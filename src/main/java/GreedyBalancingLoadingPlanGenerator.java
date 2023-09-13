@@ -28,7 +28,6 @@ public class GreedyBalancingLoadingPlanGenerator implements LoadingPlanGenerator
         containers.sort(Comparator.comparing(Container::getWeight).reversed());
         Map<UUID, UUID> loadingPlan = createLoadingPlan(ship, containers);
         loadingManager.writePlanToCSV(loadingPlan, csvFilePath);
-        //writePlanToCSV(loadingPlan, csvFilePath);
     }
 
      /**
@@ -39,19 +38,19 @@ public class GreedyBalancingLoadingPlanGenerator implements LoadingPlanGenerator
      * @return A map where the key is the container ID and the value is the storage area ID.
      */
     private Map<UUID, UUID> createLoadingPlan(ContainerShip ship, List<Container> containers) {
-        // Initialize data structures
+        // Initialisiere die benötigten Datenstrukturen
         Map<UUID, UUID> loadingPlan = new HashMap<>();
         Map<UUID, Double> simulatedWeights = new HashMap<>();
         Map<UUID, Double> sectionDifferences = new HashMap<>();
         int iterations = 0;
 
-        // Iterate through each container
+        // Iteriere durch jeden Container
         for (Container container : containers) {
             if (iterations >= MAX_ITERATIONS) {
                 break;
             }
 
-            // Find the best storage area for the container
+            // Finde den besten Lagerbereich für jeden Container
             Pair<UUID, Double> bestOption = findBestStorageArea(ship, container, simulatedWeights, sectionDifferences);
 
             if (bestOption != null) {
@@ -59,7 +58,7 @@ public class GreedyBalancingLoadingPlanGenerator implements LoadingPlanGenerator
                 simulateContainerAddition(bestStorageAreaId, container, simulatedWeights);
                 loadingPlan.put(container.getId(), bestStorageAreaId);
             } else {
-                // Handle the case where no suitable storage area is found
+                // Behandle den Fall, dass kein geeigneter Lagerbereich gefunden wird
             }
 
             iterations++;
@@ -75,7 +74,7 @@ public class GreedyBalancingLoadingPlanGenerator implements LoadingPlanGenerator
      * @return The new weight difference for the section.
      */
     private double calculateNewDifference(Section section, double newWeight) {
-        // Calculate the new weight difference for the section
+        // Berechne die neue Gewichtsdifferenz für die Sektion
         return Math.abs(section.getLeftTotalWeight() + section.getRightTotalWeight() - 2 * newWeight);
     }
 
@@ -95,16 +94,16 @@ public class GreedyBalancingLoadingPlanGenerator implements LoadingPlanGenerator
         UUID bestStorageAreaId = null;
         double bestGlobalDifference = Double.MAX_VALUE;
 
-        // Iterate through each section of the ship
+        // Gehe jede Sektion des Schiffes durch
         for (Section section : ship.getSections()) {
-            // Iterate through each storage area in the section
+            // Gehe jeden Lagerbereich der Sektion durch
             for (StorageArea storageArea : section.getAllStorageAreas()) {
                 UUID storageAreaId = storageArea.getId();
                 double newWeight = simulatedWeights.getOrDefault(storageAreaId, 0.0) + container.getWeight();
                 double newLocalDifference = calculateNewDifference(section, newWeight);
                 double newGlobalDifference = Math.abs(ship.getTotalLeftWeight() + ship.getTotalRightWeight() - 2 * newLocalDifference);
 
-                // Update the best option if a lower global difference is found
+                // Aktualisiere die beste Option wenn eine kleinere globale Differenz gefunden wurde
                 if (newGlobalDifference < bestGlobalDifference) {
                     bestGlobalDifference = newGlobalDifference;
                     bestStorageAreaId = storageAreaId;
@@ -124,10 +123,10 @@ public class GreedyBalancingLoadingPlanGenerator implements LoadingPlanGenerator
      */
     private void simulateContainerAddition(UUID storageAreaId, Container container,
                                            Map<UUID, Double> simulatedWeights) {
-        // Get the current simulated weight for the storage area
+        // Beziehe das aktuell simulierte Gewicht für den Lagerbereich
         double currentWeight = simulatedWeights.getOrDefault(storageAreaId, 0.0);
 
-        // Update the simulated weight for the storage area
+        // Aktualisiere das simulierte Gewicht für den Lagerbereich
         simulatedWeights.put(storageAreaId, currentWeight + container.getWeight());
     }
 }
