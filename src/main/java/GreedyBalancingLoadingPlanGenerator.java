@@ -5,8 +5,14 @@ import java.util.*;
  * Uses a greedy algorithm to balance the weight of containers across the ship.
  */
 public class GreedyBalancingLoadingPlanGenerator implements LoadingPlanGenerator {
-    // Maximum number of iterations to avoid infinite loops
+    /**
+     * Maximum number of iterations to avoid infinite loops
+     */
     private static final int MAX_ITERATIONS = 10_000_000;
+
+    /**
+     * Use the loadingManager to load the ship
+     */
     LoadingManager loadingManager = new LoadingManager();
 
     /**

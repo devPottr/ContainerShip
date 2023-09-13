@@ -8,6 +8,9 @@ import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Class to test the class {@link ContainerTerminal}
+ */
 public class ContainerTerminalTest {
 
     @TestFactory

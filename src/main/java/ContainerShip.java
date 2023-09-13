@@ -6,10 +6,15 @@ import java.util.UUID;
  * Represents a container ship with multiple sections.
  */
 public class ContainerShip implements Cloneable {
-    // List of sections in the ship
+
+    /**
+     * List of sections that this ship has
+     */
     private List<Section> sections;
 
-    // Unique identifier for this ship
+    /**
+     * Unique identifier for this ship
+     */
     private final UUID id;
 
     /**
@@ -70,19 +75,7 @@ public class ContainerShip implements Cloneable {
         System.out.println("Balanced Value: " + Math.abs(totalLeftWeight - totalRightWeight));
     }
 
-    @Override
-    protected ContainerShip clone() {
-        try {
-            ContainerShip cloned = (ContainerShip) super.clone();
-            cloned.sections = new ArrayList<>();
-            for (Section section : sections) {
-                cloned.sections.add(section.clone());
-            }
-            return cloned;
-        } catch (CloneNotSupportedException e) {
-            throw new AssertionError();
-        }
-    }
+
 
     /**
      * Calculates the total weight on the left side of the ship.
@@ -114,5 +107,23 @@ public class ContainerShip implements Cloneable {
      */
     public double getBalanceValue() {
         return Math.abs(getTotalLeftWeight() - getTotalRightWeight());
+    }
+
+    /**
+     * Creates and returns a deep copy of this object
+     * @return a cloned object of type {@link ContainerShip}
+     */
+    @Override
+    protected ContainerShip clone() {
+        try {
+            ContainerShip cloned = (ContainerShip) super.clone();
+            cloned.sections = new ArrayList<>();
+            for (Section section : sections) {
+                cloned.sections.add(section.clone());
+            }
+            return cloned;
+        } catch (CloneNotSupportedException e) {
+            throw new AssertionError();
+        }
     }
 }

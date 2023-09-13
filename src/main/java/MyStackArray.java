@@ -7,20 +7,27 @@ import java.util.stream.Stream;
  * @param <E> The type of elements stored in this stack.
  */
 public class MyStackArray<E> {
-    // Maximum capacity of the stack
-    private static final int MAX_CAPACITY = 35;
+    /**
+     * Maximum capacity of the stack
+     */
+    private int maxCapacity;
 
-    // Array to store the elements
+    /**
+     * Array to internally store the elements
+     */
     private Object[] elements;
 
-    // The current size of the stack
+    /**
+     * Current size of the stack
+     */
     private int size;
 
     /**
      * Initializes an empty stack with a maximum capacity.
      */
-    public MyStackArray() {
-        this.elements = new Object[MAX_CAPACITY];
+    public MyStackArray(int maxCapacity) {
+        this.maxCapacity = maxCapacity;
+        this.elements = new Object[maxCapacity];
         this.size = 0;
     }
 
@@ -30,7 +37,7 @@ public class MyStackArray<E> {
      * @throws IllegalStateException if the stack is full.
      */
     public void push(E element) {
-        if (size >= MAX_CAPACITY) {
+        if (size >= maxCapacity) {
             throw new IllegalStateException("Stack is full");
         }
         elements[size++] = element;
@@ -85,7 +92,7 @@ public class MyStackArray<E> {
      * @return true if the stack is full, false otherwise.
      */
     public boolean isFull() {
-        return size == MAX_CAPACITY;
+        return size == maxCapacity;
     }
 
     /**

@@ -6,6 +6,9 @@ import org.junit.jupiter.api.TestFactory;
 
 import java.util.stream.Stream;
 
+/**
+ * Class to test the class {@link ContainerShip}
+ */
 public class ContainerShipTest {
 
     @TestFactory

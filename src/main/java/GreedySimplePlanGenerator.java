@@ -1,8 +1,23 @@
 import java.util.*;
 
+/**
+ * Implements the LoadingPlanGenerator interface to generate a loading plan for a container ship.
+ * Uses a greedy algorithm with a simple approach to balance the weight of containers across the ship.
+ */
 public class GreedySimplePlanGenerator implements LoadingPlanGenerator {
+    /**
+     * Use the loadingManager to load the ship
+     */
     private final LoadingManager loadingManager = new LoadingManager();
 
+    /**
+     * Generates a loading plan for the given container ship and list of containers.
+     * Writes the plan to a CSV file.
+     *
+     * @param ship        The container ship to be loaded.
+     * @param containers  The list of containers to be loaded onto the ship.
+     * @param csvFilePath The path to the CSV file where the plan will be written.
+     */
     @Override
     public void generatePlan(ContainerShip ship, List<Container> containers, String csvFilePath) {
         // Clone the ship

@@ -7,13 +7,19 @@ import java.util.UUID;
  * Represents a section of a container ship, consisting of left and right storage areas.
  */
 public class Section implements Cloneable {
-    // Unique identifier for the section
+    /**
+     * Unique identifier for this section
+     */
     private final UUID id;
 
-    // List of storage areas on the left side of the section
+    /**
+     * List of storage areas on the left side of this section
+     */
     private List<StorageArea> leftStorageAreas;
 
-    // List of storage areas on the right side of the section
+    /**
+     * List of storage areas on the right side of this section
+     */
     private List<StorageArea> rightStorageAreas;
 
     /**

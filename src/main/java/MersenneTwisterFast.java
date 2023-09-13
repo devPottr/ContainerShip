@@ -1,6 +1,6 @@
 import java.io.*;
 
-public class MersenneTwisterFast implements Serializable, Cloneable {
+public class MersenneTwisterFast implements Serializable, Cloneable, RandomNumberGenerator {
     @Serial
     private static final long serialVersionUID = -8219700664442619525L;
 
@@ -43,27 +43,27 @@ public class MersenneTwisterFast implements Serializable, Cloneable {
         }
     }
 
-    public boolean stateEquals(MersenneTwisterFast other) {
-        if (other == this) {
-            return true;
-        }
-
-        if (other == null) {
+    public boolean stateEquals(Object other) {
+        if (!(other instanceof MersenneTwisterFast otherMersenneTwisterFast)) {
             return false;
         }
 
-        if (mti != other.mti) {
+        if (otherMersenneTwisterFast == this) {
+            return true;
+        }
+
+        if (mti != otherMersenneTwisterFast.mti) {
             return false;
         }
 
         for (int x = 0; x < mag01.length; x++) {
-            if (mag01[x] != other.mag01[x]) {
+            if (mag01[x] != otherMersenneTwisterFast.mag01[x]) {
                 return false;
             }
         }
 
         for (int x = 0; x < mt.length; x++) {
-            if (mt[x] != other.mt[x]) {
+            if (mt[x] != otherMersenneTwisterFast.mt[x]) {
                 return false;
             }
         }

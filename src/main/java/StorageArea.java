@@ -14,13 +14,15 @@ public class StorageArea implements Cloneable {
     // Unique identifier for this storage area
     private final UUID id;
 
+    private final int MAX_CAPACITY = 35;
+
     /**
      * Creates a new StorageArea with the given maximum stack size.
      *
      * @param maxStackSize The maximum number of containers this storage area can hold.
      */
     public StorageArea(int maxStackSize) {
-        this.stack = new MyStackArray<>();
+        this.stack = new MyStackArray<>(MAX_CAPACITY);
         this.maxStackSize = maxStackSize;
         this.id = UUID.randomUUID();
     }
@@ -100,7 +102,7 @@ public class StorageArea implements Cloneable {
     public StorageArea clone() {
         try {
             StorageArea clone = (StorageArea) super.clone();
-            clone.stack = new MyStackArray<>();
+            clone.stack = new MyStackArray<>(MAX_CAPACITY);
             return clone;
         } catch (CloneNotSupportedException e) {
             throw new AssertionError();

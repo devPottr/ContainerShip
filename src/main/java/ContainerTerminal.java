@@ -7,14 +7,24 @@ import java.util.UUID;
  * Provides methods for adding, removing, and retrieving containers.
  */
 public class ContainerTerminal {
-    // Random number generator for generating container attributes
-    private static final MersenneTwisterFast RANDOM = new MersenneTwisterFast();
 
-    // 2D grid to represent the terminal layout
+    /**
+     * Random number generator for generating container attributes
+     */
+    private static final RandomNumberGenerator RANDOM = new MersenneTwisterFast();
+
+    /**
+     * Two-dimensional grid to represent the terminal layout
+     */
     private final Container[][] grid;
 
-    // Number of rows and columns in the terminal
+    /**
+     * Number of rows in the terminal
+     */
     private final int rows;
+    /**
+     * Number of columns in the terminal
+     */
     private final int cols;
 
     /**

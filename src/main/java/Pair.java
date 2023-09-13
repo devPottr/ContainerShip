@@ -6,10 +6,13 @@ import java.util.Objects;
  * @param <V> The type of the second element (value).
  */
 public class Pair<K, V> {
-    // The first element (key) of the pair
+    /**
+     * The first element (key) of the pair
+     */
     private final K key;
-
-    // The second element (value) of the pair
+    /**
+     * The second element (value) of the pair
+     */
     private final V value;
 
     /**
